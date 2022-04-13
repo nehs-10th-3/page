@@ -1,0 +1,12 @@
+@mixin background {
+    background-color: #f3f3f3;
+
+}
+
+#background {
+    @include background()
+}
+
+.background {
+    @include background()
+}
