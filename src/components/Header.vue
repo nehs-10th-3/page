@@ -9,6 +9,7 @@
             prominent
             src="https://picsum.photos/1920/1080?random"
             fade-img-on-scroll
+            :key="templateKey"
         >
             <template v-slot:img="{ props }">
                 <v-img
@@ -20,16 +21,17 @@
             <v-app-bar-nav-icon
                 @click="isOpen = !isOpen"
                 class="d-block d-sm-none"
-                ref="navIcon"
+                ref="icon"
             ></v-app-bar-nav-icon>
 
-            <v-app-bar-title>
+            <v-app-bar-title class="">
                 NEHS-10th-3
             </v-app-bar-title>
 
             <v-spacer></v-spacer>
         
-            <template 
+            <template
+                v-if="!isNavigationIconShow()"
                 v-slot:extension
             >
                 <v-tabs
@@ -58,6 +60,7 @@ export default {
         Drawer 
     },
     data: () => ({
+        templateKey: 1,
         isOpen: false,
         tabs: [
             {
@@ -74,9 +77,21 @@ export default {
             },
         ]
     }),
+    methods: {
+        isNavigationIconShow () {
+            let velement = this.$refs.icon
+            if(!velement) {
+                return true;
+            }
+            let displayValue = window.getComputedStyle(velement.$el).display
+            return displayValue == 'block'
+        }
+    },
+    mounted() {
+        this.templateKey += 1
+    }
 }
 </script>
 
 <style scope>
-
 </style>

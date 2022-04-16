@@ -1,18 +1,18 @@
 <template>
     <v-navigation-drawer
+        app
         :value="value"
         @input="$emit('input')"
-        absolute
         temporary
     >
         <v-list-item>
-
+            
             <v-list-item-avatar>
-                <v-icon>mdi-view-dashboard</v-icon>
+                <v-icon>mdi-navigation-variant-outline</v-icon>
             </v-list-item-avatar>
 
             <v-list-item-content>
-                <v-list-item-title>Ha Ha is me</v-list-item-title>
+                <v-list-item-title>Navigator</v-list-item-title>
             </v-list-item-content>
         </v-list-item>
 
@@ -47,17 +47,17 @@ export default {
     data: () => ({
         items: [
             {
-                icon: "mdi-view-dashboard",
+                icon: "mdi-home",
                 title: "Home",
                 link: "/home",
             },
             {
-                icon: "mdi-view-dashboard",
+                icon: "mdi-calendar-clock",
                 title: "Event",
                 link: "/event",
             },
             {
-                icon: "mdi-view-dashboard",
+                icon: "mdi-image-multiple",
                 title: "Gallery",
                 link: "/gallery",
             }
