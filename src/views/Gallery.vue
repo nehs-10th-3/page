@@ -1,7 +1,7 @@
 <template>
-    <v-row>
-        <v-spacer />
-        <v-col sm="3" cols="12" class="py-0">
+    <v-row id="gallery-row">
+        <v-spacer></v-spacer>
+        <v-col sm="3" cols="12" class="py-0 px-3">
             <v-img
                 id="gallery-img"
                 v-for="index in segment"
@@ -10,8 +10,8 @@
             ></v-img> 
             
         </v-col>
-
-        <v-col sm="3" cols="12" class="py-0">
+        
+        <v-col sm="3" cols="12" class="py-0 px-3">
             <v-img
                 id="gallery-img"
                 v-for="index in segment"
@@ -19,8 +19,8 @@
                 :src="images[index + segment]"
             ></v-img> 
         </v-col>
-
-        <v-col sm="3" cols="12" class="py-0">
+        
+        <v-col sm="3" cols="12" class="py-0 px-3">
             <v-img
                 id="gallery-img"
                 v-for="index in segment"
@@ -28,7 +28,7 @@
                 :src="images[index + segment * 2]"
             ></v-img> 
         </v-col>
-        <v-spacer />
+        <v-spacer></v-spacer>
     </v-row>
 </template>
 
@@ -71,5 +71,9 @@ export default {
 #gallery-img {
     border-radius: 4px;
     margin-top: 3vh
+}
+#gallery-row {
+    margin-left: 3vw;
+    margin-right: 3vw;
 }
 </style>
