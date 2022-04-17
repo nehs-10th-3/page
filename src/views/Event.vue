@@ -52,34 +52,11 @@ export default {
         dialogContent: {},
         events: [
             {
-                color: 'cyan',
-                date: '1960',
-                title: 'Lollipop',
-                content: 'delicious',
-            },
-            {
-                color: 'green',
-                date: '1970',
-                title: 'OK',
-                content: 'Ha',
-            },
-            {
-                color: 'pink',
-                date: '1980',
-                title: 'Good job!',
-                content: 'umnnn',
-            },
-            {
-                color: 'amber',
-                date: '2022-4-12',
-                title: '分科仔模考',
-                content: '妳各位加油',
-            },
-            {
                 color: 'orange',
                 date: '2022-4-8',
-                title: '運動會',
-                content: '拉拉拉ㄌ拉',
+                title: '運動會(三)',
+                content: '文案待補:))',
+                link: '/gallery/sportGames'
             },
         ],
     }),

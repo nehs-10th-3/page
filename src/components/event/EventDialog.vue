@@ -26,7 +26,7 @@
                     <v-btn
                         color="green darken-1"
                         text
-                        @click="dialog = false"
+                        @click="dialog = false; changePath(description.link)"
                     >
                         See More
                     </v-btn>

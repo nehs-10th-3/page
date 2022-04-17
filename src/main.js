@@ -7,7 +7,10 @@ Vue.config.productionTip = false
 let mixin = {
   methods: {
     changePath(goToPath) {
-        router.push(goToPath)
+      if(!goToPath) {
+        return;
+      }
+      router.push(goToPath)
         .catch((error) => {
             if (error.name != "NavigationDuplicated") {
                 throw error;

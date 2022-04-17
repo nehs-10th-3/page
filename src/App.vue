@@ -27,4 +27,7 @@ export default {
 
 <style scoped lang='scss'>
 @import 'assets/scss/common.scss';
+.container {
+  padding: 0px;
+}
 </style>
