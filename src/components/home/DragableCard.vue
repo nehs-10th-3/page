@@ -3,7 +3,8 @@
         id="dragable-card"
         :style="{ 'top': `${top}` }"
         @touchstart="touchStart"
-        @touchmove="touchMove"    
+        @touchmove="touchMove"
+        class="d-block; d-sm-none"    
     >
         <v-divider id="dragable-card-divider"></v-divider>
     </div>
@@ -14,7 +15,7 @@ export default {
     
     data: () => ({
         previousY: 0,
-        top: '90vh',
+        top: '90%',
         topValue: 90,
         deltaY: 0,
         rawY: 0,
@@ -25,6 +26,10 @@ export default {
     },
 
     methods: {
+        percentHeight(p) {
+            let h = window.screen.height;
+            return Math.round(h * p / 100);
+        },
         vh(v) {
             let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
             return (v * h) / 100;
@@ -41,17 +46,17 @@ export default {
         touchMove(event) {
             event.preventDefault();
 
-            if(this.top === '90vh') {
+            if(this.top === '90%') {
                 this.topValue = event.touches[0].clientY;
             } else {
                 this.deltaY += (event.touches[0].clientY - this.previousY);
-                this.deltaY = this.clamp(this.deltaY, -380, 0);
+                this.deltaY = this.clamp(this.deltaY, -this.vh(80), 0);
                 this.topValue += (event.touches[0].clientY - this.previousY);
                 this.previousY = event.touches[0].clientY;
             }
 
-            if(this.deltaY <= -380) {
-                this.topValue = this.rawY - 380;
+            if(this.deltaY <= -this.vh(80)) {
+                this.topValue = this.rawY - this.vh(80);
                 return;
             }
 
@@ -71,10 +76,11 @@ export default {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     opacity: 90%;
-    top: 90vh;
-    height: 450px;
+    top: 90%;
+    height: 100vh;
     position: fixed;
     width: 100vw;
+    z-index: 10000;
 }
 
 #dragable-card:hover {

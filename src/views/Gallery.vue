@@ -2,31 +2,39 @@
     <v-row id="gallery-row">
         <v-spacer></v-spacer>
         <v-col sm="3" cols="12" class="py-0 px-3">
-            <v-img
-                id="gallery-img"
+            <v-lazy
                 v-for="index in segment"
                 :key="index"
-                :src="images[index]"
-            ></v-img> 
-            
+            >
+                <v-img
+                    id="gallery-img"
+                    :src="images[index]"
+                ></v-img> 
+            </v-lazy>
         </v-col>
         
         <v-col sm="3" cols="12" class="py-0 px-3">
-            <v-img
-                id="gallery-img"
+            <v-lazy
                 v-for="index in segment"
                 :key="index"
-                :src="images[index + segment]"
-            ></v-img> 
+            >
+                <v-img
+                    id="gallery-img"
+                    :src="images[index + segment]"
+                ></v-img> 
+            </v-lazy>
         </v-col>
         
         <v-col sm="3" cols="12" class="py-0 px-3">
-            <v-img
-                id="gallery-img"
+            <v-lazy
                 v-for="index in segment"
                 :key="index"
-                :src="images[index + segment * 2]"
-            ></v-img> 
+            >
+                <v-img
+                    id="gallery-img"
+                    :src="images[index + segment * 2]"
+                ></v-img> 
+            </v-lazy>
         </v-col>
         <v-spacer></v-spacer>
     </v-row>

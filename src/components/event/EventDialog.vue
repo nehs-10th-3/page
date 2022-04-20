@@ -28,7 +28,7 @@
                         text
                         @click="dialog = false; changePath(description.link)"
                     >
-                        See More
+                        See Photo
                     </v-btn>
                 </v-card-actions>
             </v-card>

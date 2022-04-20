@@ -14,19 +14,19 @@
                     class="py-3 px-1 mr-5"
                     @click="handleClick(event)"
                 >
-                    <v-card-title>
+                    <v-card-title class="ml-3">
                         <h2 :class="`headline font-weight-light ${event.color}--text`">
                             {{ event.title }}
                         </h2>
                     </v-card-title>
 
-                    <v-card-subtitle>
+                    <v-card-subtitle class="mt-1 mb-3 ml-3">
                         <h4 :class="`font-weight-light ${event.color}--text`">
                             {{ event.date }}
                         </h4>
                     </v-card-subtitle>
 
-                    <v-card-text>
+                    <v-card-text class="ml-3">
                         <div id="event-timeline-content">
                             {{ event.content }}
                         </div>
