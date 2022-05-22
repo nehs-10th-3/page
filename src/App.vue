@@ -1,9 +1,11 @@
 <template>
   <v-app>
-    <Header></Header>
+    <Header
+      :tabIndex="tabIndex"
+    ></Header>
     <v-main id="background">
         <v-container fluid>
-            <router-view></router-view>
+            <router-view @index-change="setIndex"></router-view>
         </v-container>
     </v-main>
   </v-app>
@@ -20,8 +22,15 @@ export default {
     },
 
     data: () => ({
-    
+      tabIndex: 0,
     }),
+    methods: {
+      setIndex(value) {
+        if(value) {
+          this.tabIndex = value;
+        }
+      }
+    }
 };
 </script>
 

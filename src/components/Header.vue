@@ -7,7 +7,7 @@
             dark
             shrink-on-scroll
             prominent
-            src="https://picsum.photos/1920/1080?random"
+            :src="require('../assets/header/ray.jpg')"
             fade-img-on-scroll
             :key="templateKey"
         >
@@ -38,6 +38,7 @@
                     class="d-none d-sm-block"
                     align-with-title
                     grow
+                    :value="tabIndex"
                 >
                     <v-tab
                         v-for="tab in tabs"
@@ -58,6 +59,9 @@ import Drawer from './Drawer.vue'
 export default {
     components: {
         Drawer 
+    },
+    props: {
+        tabIndex: 0,
     },
     data: () => ({
         templateKey: 1,

@@ -1,5 +1,8 @@
 <template>
-    <v-row id="gallery-row">
+    <v-row
+        id="gallery-row"
+        class="mt-5"
+    >
         <v-spacer></v-spacer>
         <v-col sm="3" cols="12" class="py-0 px-3">
             <v-lazy
@@ -9,7 +12,20 @@
                 <v-img
                     id="gallery-img"
                     :src="images[index]"
-                ></v-img> 
+                >
+                    <template v-slot:placeholder>
+                        <v-row
+                            class="fill-height ma-0"
+                            align="center"
+                            justify="center"
+                        >
+                            <v-progress-circular
+                                indeterminate
+                                color="grey lighten-5"
+                            ></v-progress-circular>
+                        </v-row>
+                    </template>
+                </v-img> 
             </v-lazy>
         </v-col>
         
@@ -21,7 +37,20 @@
                 <v-img
                     id="gallery-img"
                     :src="images[index + segment]"
-                ></v-img> 
+                >
+                    <template v-slot:placeholder>
+                        <v-row
+                            class="fill-height ma-0"
+                            align="center"
+                            justify="center"
+                        >
+                            <v-progress-circular
+                                indeterminate
+                                color="grey lighten-5"
+                            ></v-progress-circular>
+                        </v-row>
+                    </template>
+                </v-img> 
             </v-lazy>
         </v-col>
         
@@ -33,7 +62,20 @@
                 <v-img
                     id="gallery-img"
                     :src="images[index + segment * 2]"
-                ></v-img> 
+                >
+                    <template v-slot:placeholder>
+                        <v-row
+                            class="fill-height ma-0"
+                            align="center"
+                            justify="center"
+                        >
+                            <v-progress-circular
+                                indeterminate
+                                color="grey lighten-5"
+                            ></v-progress-circular>
+                        </v-row>
+                    </template>
+                </v-img> 
             </v-lazy>
         </v-col>
         <v-spacer></v-spacer>
@@ -77,7 +119,7 @@ export default {
 
 <style scope>
 #gallery-img {
-    border-radius: 4px;
+    border-radius: 2px;
     margin-top: 3vh
 }
 #gallery-row {

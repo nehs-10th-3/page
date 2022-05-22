@@ -1,8 +1,11 @@
 <template>
     <div>
-        <v-timeline id="event-timeline">
+        <v-timeline
+            id="event-timeline"
+        >
             <v-timeline-item
                 v-for="(event, i) in events"
+                class="py-0 mb-9"
                 :key="i"
                 :color="event.color"
                 small
@@ -27,8 +30,10 @@
                     </v-card-subtitle>
 
                     <v-card-text class="ml-3">
-                        <div id="event-timeline-content">
-                            {{ event.content }}
+                        <div
+                            id="event-timeline-content"
+                            v-html="event.content"
+                        >
                         </div>
                     </v-card-text>
                 </v-card>
@@ -50,15 +55,7 @@ export default {
     data: () => ({  
         dialog: false,
         dialogContent: {},
-        events: [
-            {
-                color: 'orange',
-                date: '2022-4-8',
-                title: '運動會(三)',
-                content: '文案待補:))',
-                link: '/gallery/sportGames'
-            },
-        ],
+        events: require('../assets/events.json'),
     }),
     methods: {
         handleClick (event) {
@@ -74,6 +71,7 @@ export default {
 
 #event-timeline {
     margin-left: -70vw;
+    margin-top: 5vh;
 }
 
 #event-timeline-content {

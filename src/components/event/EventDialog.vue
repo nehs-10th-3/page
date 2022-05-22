@@ -10,8 +10,9 @@
                 <v-card-title>
                     <span class="text-h5">{{ description.title }}</span>
                 </v-card-title>
-                <v-card-text>
-                    {{ description.content }}
+                <v-card-text
+                    v-html="description.content"
+                >
                 </v-card-text>
 
                 <v-card-actions>

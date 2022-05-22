@@ -6,7 +6,25 @@
         @touchmove="touchMove"
         class="d-block; d-sm-none"    
     >
-        <v-divider id="dragable-card-divider"></v-divider>
+        <v-divider id="dragable-card-divider">
+        </v-divider>
+        <br><br><br>
+        <div class="ml-6 mr-6">
+            <h2 class="dragable-card-text">
+                緣起：
+            </h2>
+            <h3 class="dragable-card-text">
+                將所有來不及放上畢業紀念冊的相片收藏在這裡，
+                期待幾十年之後能增加新的相片(??
+            </h3>
+            <br>
+            <h3 class="dragable-card-text">
+                生命以相遇和別離交織而成，
+                每一個被寫得燦爛的故事，
+                都承載了過往，並為了後來的篇章，
+                揭開序幕。
+            </h3>
+        </div>
     </div>
 </template>
 
@@ -71,6 +89,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
 #dragable-card {
     background: #6a76ab;
     border-top-left-radius: 25px;
@@ -93,5 +112,11 @@ export default {
     border-radius: 3px;
     margin: 4.5vh auto;
     width: 25vw;
+}
+
+.dragable-card-text {
+    color: #ffffff;
+    font-weight: 500;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 </style>
